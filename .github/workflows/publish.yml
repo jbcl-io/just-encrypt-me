@@ -1,0 +1,25 @@
+name: publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: install
+        uses: borales/actions-yarn@v2
+        with:
+          cmd: install
+      - name: build
+        uses: borales/actions-yarn@v2
+        with:
+          cmd: build
+      - name: publish
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
