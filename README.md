@@ -1,5 +1,10 @@
 <h1 align="center">just-encrypt-me</h1>
 <p align="center">⚡️ A super simple encryption library.</p>
+<p align="center">
+  <img src="https://img.shields.io/github/package-json/v/slater-notes/just-encrypt-me" />
+  <img src="https://img.shields.io/github/last-commit/slater-notes/just-encrypt-me" />
+  <img src="https://img.shields.io/github/license/slater-notes/just-encrypt-me?color=blue" />
+</p>
 
 > **NOTE:** just-encrypt-me is still a pre-release project (v0.x.x). Please use at your own risk. If you find this project useful, please consider leaving a star so others can find it. Thanks!
 
