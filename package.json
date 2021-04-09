@@ -1,7 +1,7 @@
 {
   "name": "just-encrypt-me",
   "version": "0.1.1",
-  "description": "An opinionated, simplified encryption library on top of the Web Crypto API.",
+  "description": "⚡️ A super simple encryption library.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",

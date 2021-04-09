@@ -1,5 +1,5 @@
-<h1 align="center">🔐 Just Encrypt Me</h1>
-<p align="center">An opinionated, simplified encryption library on top of the Web Crypto API.</p>
+<h1 align="center">just-encrypt-me</h1>
+<p align="center">⚡️ A super simple encryption library.</p>
 
 > **NOTE:** just-encrypt-me is still a pre-release project (v0.x.x). Please use at your own risk. If you find this project useful, please consider leaving a star so others can find it. Thanks!
 
@@ -7,19 +7,9 @@
 
 This library takes a few of the best methods from the Web Crypto API and simplifies it to make encryption easier (with pretty good defaults based on best practices).
 
-- ✨ Simplifies encryption while following best security practices.
+- ✨ Simplified encrypt/decrypt API while still following best security practices.
 - 🚀 Works in browsers, web workers, node and electron. _React Native not tested._
 - 🔑 _Asymmetric encryption coming soon._
-
-## Opinionated, how?
-
-- Has only 1 type of symmetric encryption mode (`AES-GCM-256`) from the Web Crypto API (based on best practices and imo)
-- Password key derivation will do 500,000 iterations by default (minimum, can set higher, but not lower)
-- Has only 1 hash method (`SHA256`)
-- Expects UTF-8 everywhere input
-- Nonce, salt and IV are simply referred to as "seed" in all function arguments. Avoids confusion. Simplifies the library even further.
-
-_If you need to use the other types of encryption mode or tweak any other settings, this library is not what you're looking for._
 
 ## Install
 
@@ -67,6 +57,8 @@ console.log(decrypted.string()); // Hello, World!
 const decrypted = decrypt(buffer, password, seed);
 console.log(decrypted.string()); // Hello, World!
 ```
+
+## Other cool things you can do
 
 ### Hash a message
 
@@ -117,6 +109,20 @@ console.log(decrypted.string()); // Hello, World!
 const decrypted = decryptWithKey(buffer, key, seed2);
 console.log(decrypted.string()); // Hello, World!
 ```
+
+## Documentation
+
+_I'm still putting together a docs site. Watch this space.._
+
+## Somewhat Opinionated
+
+- Has only 1 type of symmetric encryption mode (`AES-GCM-256`) from the Web Crypto API (based on best practices and imo)
+- Password key derivation will do 500,000 iterations by default (minimum, can set higher, but not lower)
+- Has only 1 hash method (`SHA256`)
+- Expects UTF-8 everywhere input
+- Nonce, salt and IV are simply referred to as "seed" in all function arguments. Avoids confusion. Simplifies the library even further.
+
+_If you need to use the other types of encryption mode or tweak any other settings, this library is not what you're looking for._
 
 ## Maintainers
 
