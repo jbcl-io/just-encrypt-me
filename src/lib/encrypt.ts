@@ -1,4 +1,4 @@
-import { encryptionMethod } from '../settings';
+import { ENCRYPTION_METHOD } from '../constants';
 import { deriveKey } from './deriveKey';
 import { base64ToUint8Array, buffer, bufferToBase64, crypto, stringToUint8Array } from './utils';
 
@@ -13,7 +13,7 @@ export async function encryptWithKey(payload: string, key: CryptoKey, seed: stri
 
   const encryptedData = await crypto.subtle.encrypt(
     {
-      name: encryptionMethod,
+      name: ENCRYPTION_METHOD,
       iv: seedBuffer,
     },
     key,

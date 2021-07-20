@@ -1,10 +1,10 @@
 import {
-  derivationIterations,
-  derivationMethod,
-  encryptionLength,
-  encryptionMethod,
-  hashMethod,
-} from '../settings';
+  DERIVATION_ITERATIONS,
+  DERIVATION_METHOD,
+  ENCRYPTION_LENGTH,
+  ENCRYPTION_METHOD,
+  HASH_METHOD,
+} from '../constants';
 import { passwordToCryptoKey } from './passwordToCryptoKey';
 import { base64ToUint8Array, crypto } from './utils';
 
@@ -14,7 +14,7 @@ export interface DeriveKeyOptions {
 
 export async function deriveKey(password: string, seed: string, options?: DeriveKeyOptions) {
   const iterations =
-    typeof options?.iterations === 'undefined' ? derivationIterations : Number(options.iterations);
+    typeof options?.iterations === 'undefined' ? DERIVATION_ITERATIONS : Number(options.iterations);
 
   if (iterations < 500000) {
     throw 'iteration count must be 500,000 or more';
@@ -25,13 +25,13 @@ export async function deriveKey(password: string, seed: string, options?: Derive
 
   return await crypto.subtle.deriveKey(
     {
-      name: derivationMethod,
+      name: DERIVATION_METHOD,
       salt: seedBuffer,
       iterations,
-      hash: { name: hashMethod },
+      hash: { name: HASH_METHOD },
     },
     baseKey,
-    { name: encryptionMethod, length: encryptionLength },
+    { name: ENCRYPTION_METHOD, length: ENCRYPTION_LENGTH },
     false,
     ['encrypt', 'decrypt'],
   );
